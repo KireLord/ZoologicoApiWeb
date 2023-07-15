@@ -11,12 +11,6 @@
         // Otros campos de registro que puedas necesitar
     }
 
-    public class Usuario : Registro
-    {
-        public string? NombreUsuario { get; set; }
-        public string? Contrasena { get; set; }
-
-        // Otros campos de usuario que puedas necesitar
-    }
+    
 }
 
