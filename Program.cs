@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using ZoologicoApiWeb.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<BDTicketContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BDTicketContext") ?? throw new InvalidOperationException("Connection string 'BDTicketContext' not found.")));
 builder.Services.AddDbContext<ZoologicoApiWebContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ZoologicoApiWebContext") ?? throw new InvalidOperationException("Connection string 'ZoologicoApiWebContext' not found.")));
 
